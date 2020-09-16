@@ -3,6 +3,7 @@ import random, copy
 class Game():
 
     def __init__(self, height=20, width=60):
+        """Creates a Game object for the driver class."""
         self.HEIGHT = height
         self.WIDTH = width
         self.next_cells = []
