@@ -11,7 +11,6 @@ class Game():
     def make_matrix(self):
         """Creates the matrix for the game."""
         # Create a list of list for the cells.
-        self.next_cells = []
         for i in range(self.WIDTH):
             column = [] # Create a column.
             for j in range(self.HEIGHT):
