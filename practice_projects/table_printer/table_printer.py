@@ -3,12 +3,30 @@ tableData = [['apples', 'oranges', 'cherries', 'banana'],
              ['Alice', 'Bob', 'Carol', 'David'],
              ['dogs', 'cats', 'mouse', 'goose']]
 
-# Finds the max amount of chars in each column.
 colWidth = []
-for i in range(len(tableData)):
-    colWidth.append(len(max(tableData[i], key=len)))
 
-for i in range(len(tableData[0])):
-    for j in range(len(tableData)):
-        print(tableData[j][i].rjust(colWidth[j])+" ", end='')
-    print()
+
+def find_width(table):
+    """Finds the maximum char width of each column.
+
+    Args:
+        table (list): The table that contains the columns.
+    """
+    for i in range(len(table)):
+        colWidth.append(len(max(table[i], key=len)))
+
+
+def print_table(table):
+    """Prints the table.
+
+    Args:
+        table (list): The table that's going to be printed.
+    """
+    find_width(table)
+    for i in range(len(table[0])):
+        for j in range(len(table)):
+            print(table[j][i].rjust(colWidth[j])+" ", end='')
+        print()
+
+
+print_table(tableData)
